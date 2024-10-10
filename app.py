@@ -19,15 +19,15 @@ def predict_sales(model, tv, radio, newspaper):
     return predicted_sales[0]
 
 # Giao diện Streamlit
-st.title("Dự đoán doanh số quảng cáo")
+st.title("Dự đoán doanh số quảng cáo (Triệu $)")
 
 # Lựa chọn thuật toán
 algorithm = st.selectbox("Chọn thuật toán", ("Linear Regression", "Ridge Regression", "Neural Network", "Stacking"))
 
 # Nhập thông tin TV, Radio, Newspaper
-tv = st.number_input("Nhập giá trị cho TV:", min_value=0.0, value=100.0)
-radio = st.number_input("Nhập giá trị cho Radio:", min_value=0.0, value=50.0)
-newspaper = st.number_input("Nhập giá trị cho Newspaper:", min_value=0.0, value=30.0)
+tv = st.number_input("Nhập giá trị cho TV (Nghìn $):", min_value=0.0, value=100.0)
+radio = st.number_input("Nhập giá trị cho Radio (Nghìn $):", min_value=0.0, value=50.0)
+newspaper = st.number_input("Nhập giá trị cho Newspaper (Nghìn $):", min_value=0.0, value=30.0)
 
 # Nút để dự đoán
 if st.button("Dự đoán"):
