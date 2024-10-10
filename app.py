@@ -19,7 +19,7 @@ def predict_sales(model, tv, radio, newspaper):
     return predicted_sales[0]
 
 # Giao diện Streamlit
-st.title("Dự đoán doanh số quảng cáo (Triệu $)")
+st.title("Dự đoán doanh số quảng cáo")
 
 # Lựa chọn thuật toán
 algorithm = st.selectbox("Chọn thuật toán", ("Linear Regression", "Ridge Regression", "Neural Network", "Stacking"))
@@ -42,7 +42,7 @@ if st.button("Dự đoán"):
 
     # Dự đoán và hiển thị kết quả
     predicted_sales = predict_sales(model, tv, radio, newspaper)
-    st.success(f'Dự đoán doanh số: {predicted_sales:.2f}')
+    st.success(f'Dự đoán doanh số (Triệu $): {predicted_sales:.2f}')
 
 # Chạy ứng dụng bằng lệnh dưới đây trong terminal
 # streamlit run your_script_name.py
