@@ -23,6 +23,7 @@ st.title("Dự đoán doanh số quảng cáo")
 
 algorithm = st.selectbox("Chọn thuật toán", ("Linear Regression", "Ridge Regression", "Neural Network", "Stacking"))
 
+<<<<<<< HEAD
 tv = st.number_input("Nhập giá trị cho TV (để trống sẽ dùng giá trị trung bình):", value=None)
 radio = st.number_input("Nhập giá trị cho Radio (để trống sẽ dùng giá trị trung bình):", value=None)
 newspaper = st.number_input("Nhập giá trị cho Newspaper (để trống sẽ dùng giá trị trung bình):", value=None)
@@ -33,6 +34,12 @@ if radio is None:
     radio = mean_radio
 if newspaper is None:
     newspaper = mean_newspaper
+=======
+# Nhập thông tin TV, Radio, Newspaper
+tv = st.number_input("Nhập giá trị cho TV (Nghìn $):", min_value=0.0, value=100.0)
+radio = st.number_input("Nhập giá trị cho Radio (Nghìn $):", min_value=0.0, value=50.0)
+newspaper = st.number_input("Nhập giá trị cho Newspaper (Nghìn $):", min_value=0.0, value=30.0)
+>>>>>>> 32c82bfac89f5888e1dfcdfa612ae5b4ff631157
 
 if st.button("Dự đoán"):
     if algorithm == "Linear Regression":
@@ -45,5 +52,5 @@ if st.button("Dự đoán"):
         model = stacking_model
 
     predicted_sales = predict_sales(model, tv, radio, newspaper)
-    st.success(f'Dự đoán doanh số: {predicted_sales:.2f}')
+    st.success(f'Dự đoán doanh số (Triệu $): {predicted_sales:.2f}')
 
